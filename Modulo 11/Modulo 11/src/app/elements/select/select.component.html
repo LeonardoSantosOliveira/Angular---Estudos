@@ -1,0 +1,34 @@
+<!-- <label for="cars">Selecione um carro:</label>
+<select name="cards" id="cards" ngModel #meuSelectFormControl="ngModel" required>
+  <option value="" selected>Selecione um</option>
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="fiat">Fiat</option>
+  <option value="audi">Audi</option>
+</select> -->
+
+<!-- <label for="nationalities">Selecione uma nacionalidade: </label>
+<select name="nationalities" id="nationalities" ngModel #meuSelectFormControl="ngModel" required>
+  <option value="">Selecione</option>
+  <option *ngFor="let nationality of nationalities" [value]="nationality.id">{{ nationality.description }}</option>
+</select> -->
+
+<!-- <label for="nationalities">Selecione uma nacionalidade: </label>
+<select name="nationalities" id="nationalities" [(ngModel)]="nationalitySelected" #meuSelectFormControl="ngModel" required>
+  <option value="">Selecione</option>
+  <option *ngFor="let nationality of nationalities" [value]="nationality.id">{{ nationality.description }}</option>
+</select> -->
+
+<label for="nationalities">Selecione uma nacionalidade: </label>
+<select name="nationalities" id="nationalities" [ngModel]="nationalitySelected" (ngModelChange)="onChange($event)" #meuSelectFormControl="ngModel" required>
+  <option value="">Selecione</option>
+  <option *ngFor="let nationality of nationalities" [value]="nationality.id">{{ nationality.description }}</option>
+</select>
+
+<br>
+<p>Nacionalidade selecionada: {{ nationalitySelected }}</p>
+
+<h3>Estado do Select:</h3>
+<p>Válido: {{ meuSelectFormControl.valid }}</p>
+<p>Tocado: {{ meuSelectFormControl.touched }}</p>
+<p>Sujo: {{ meuSelectFormControl.dirty }}</p>

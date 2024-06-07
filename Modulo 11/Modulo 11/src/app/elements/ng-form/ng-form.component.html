@@ -1,0 +1,7 @@
+<form #meuForm="ngForm">
+  <input ngModel type="text" required name="nome" placeholder="Digite alguma coisa"/>
+
+  <p>Válido: {{ meuForm.valid }}</p>
+  <p>Tocado: {{ meuForm.touched }}</p>
+  <p>Sujo: {{ meuForm.dirty }}</p>
+</form>

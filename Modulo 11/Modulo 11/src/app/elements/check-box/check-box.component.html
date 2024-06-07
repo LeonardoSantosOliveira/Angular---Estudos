@@ -1,0 +1,26 @@
+<form #f="ngForm" ngForm>
+  <input type="checkbox" name="isActive" id="isActive" [(ngModel)]="isActive" #checkboxFormControl="ngModel" required>
+  <label for="isActive">Ativo</label>
+
+  <input type="checkbox" name="isApproved" id="isApproved" [(ngModel)]="isApproved" #checkboxFormControl="ngModel">
+  <label for="isApproved">Aprovado</label>
+
+  <p>
+    Usuário Ativo: {{ isActive }}
+  </p>
+  <p>
+    Usuário Aprovado: {{ isApproved }}
+  </p>
+
+  <button [disabled]="f.invalid" >Enviar</button>
+
+  <p>
+    Válido: {{ checkboxFormControl.valid }}
+  </p>
+  <p>
+    Tocado: {{ checkboxFormControl.touched }}
+  </p>
+  <p>
+    Sujo: {{ checkboxFormControl.dirty }}
+  </p>
+</form>
